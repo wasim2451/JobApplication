@@ -36,6 +36,16 @@ app.post('/apply',(req,res)=>{
         return res.status(500).send('Internal Server Error ! 💣')
     });
 })
+app.get('/admin',(req,res,next)=>{
+    db.execute('SELECT * FROM STUDENT_INFO')
+    .then(([rows,fields])=>{
+        res.render('Admin',{data:rows});
+    })
+    .catch((err)=>{
+        console.log('DB Error');
+        return res.status(500).send('Internal Server Error 💣');
+    })
+})
 app.listen(3000, () => {
     console.log(`Server is running on http://localhost:3000`);
 })
