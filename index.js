@@ -18,7 +18,7 @@ app.get('/', async(req, res) => {
    res.render('Home');
 })
 app.post('/apply',(req,res)=>{
-    const formData=req.body;
+
     // const random=Number(Date.now());
     // console.log(formData);
     const {name,email,phone,dob,address,position,experience,resume}=req.body;
@@ -28,8 +28,8 @@ app.post('/apply',(req,res)=>{
     (?,?,?,?,?,?,?,?)`,[name, email, phone, dob, address, position, experience, resume])
     .then(([results])=>{
         console.log('Inserted Results : ',results);
-        res.send(`<h2>Application Submitted Successfully</h2>
-        <p>You Can Exit this Page! 💀</p>`);
+        res.send(`<h1>Application Submitted Successfully</h1>
+        <h2>You Can Exit this Page! 💀</h2>`);
     })
     .catch((err)=>{
         console.log('DB Error',err);
