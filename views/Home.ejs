@@ -25,10 +25,10 @@
             Inventore nesciunt, dignissimos minima dicta mollitia non numquam!</p>
         <b class="text-[20px] ">Application Form 💡</b>
         <p class="mb-[10px]"></p>
-        <form action="/apply" method="post">
+        <form action="/apply" method="POST">
             <B>Name :</B> <input placeholder="Enter Name" type="text" name="name" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
-            <B>Email :</B> <input placeholder="Enter Email" type="text" name="email" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
-            <B>Phone No (+91):</B> <input placeholder="Enter Contact Number" name="phone" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <B>Email :</B> <input placeholder="Enter Email" type="email" name="email" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <B>Phone No (+91):</B> <input type="tel" placeholder="Enter Contact Number" name="phone" maxlength="10" pattern="[0-9]{10}" class="bg-slate-100 p-2 rounded-sm w-full" required>
             <B>DOB :</B> <input type="date" name="dob" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
             <B>Address :</B> <input placeholder="Enter Address" type="text" name="address" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
             <B>Position :</B>

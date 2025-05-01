@@ -17,6 +17,25 @@ app.set('views', path.join(__dirname, 'views'));
 app.get('/', async(req, res) => {
    res.render('Home');
 })
+app.post('/apply',(req,res)=>{
+    const formData=req.body;
+    // const random=Number(Date.now());
+    // console.log(formData);
+    const {name,email,phone,dob,address,position,experience,resume}=req.body;
+    db.execute(`INSERT INTO STUDENT_INFO 
+    (STUDENT_NAME, EMAIL, PHONE_NO, DOB, ADDRESS, POSITION, EXPERIENCE, RESUME_LINK)
+    VALUES 
+    (?,?,?,?,?,?,?,?)`,[name, email, phone, dob, address, position, experience, resume])
+    .then(([results])=>{
+        console.log('Inserted Results : ',results);
+        res.send(`<h2>Application Submitted Successfully</h2>
+        <p>You Can Exit this Page! 💀</p>`);
+    })
+    .catch((err)=>{
+        console.log('DB Error',err);
+        return res.status(500).send('Internal Server Error ! 💣')
+    });
+})
 app.listen(3000, () => {
     console.log(`Server is running on http://localhost:3000`);
 })
