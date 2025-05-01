@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Company</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        button:hover{
+            background-color: hsla(17, 100%, 50%, 0.979);
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 bg-slate-200">
+    <div class="mx-[25%] bg-white p-[3%] ">
+        <h1 class="text-[40px] font-bold mx-[20px] my-[10px] text-center">TURBO XTREME ⚡</h1>
+        <p class="text-justify mb-[10px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed odit quis reprehenderit
+            consequatur fuga! Laudantium explicabo nihil soluta magnam rem animi ab, iste et sed iusto doloribus?
+            Ratione cumque molestiae, aut itaque, eveniet vero asperiores magni excepturi culpa in dolorem repellat sed.
+            Inventore nesciunt, dignissimos minima dicta mollitia non numquam!</p>
+        <b class="text-[20px] ">Application Form 💡</b>
+        <p class="mb-[10px]"></p>
+        <form action="/apply" method="post">
+            <B>Name :</B> <input placeholder="Enter Name" type="text" name="name" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <B>Email :</B> <input placeholder="Enter Email" type="text" name="email" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <B>Phone No (+91):</B> <input placeholder="Enter Contact Number" name="phone" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <B>DOB :</B> <input type="date" name="dob" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <B>Address :</B> <input placeholder="Enter Address" type="text" name="address" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <B>Position :</B>
+            <select name="position" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+                <option value="Select one" selected disabled>Select one</option>
+                <option value="Full Stack Developer">Full Stack Developer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Android Developer">Android Developer</option>
+                <option value="Consultant">Consultant</option>
+            </select>
+            <p></p>
+            <B>Experience :</B>
+            <select name="experience" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+                <option value="Select one" selected disabled>Select one</option>
+                <option value="Fresher">Fresher</option>
+                <option value="1-3">1-3 Years</option>
+                <option value="4+">4+ Years</option>
+            </select>
+            <p></p>
+            <B>Resume Link :</B> <input placeholder="Enter Resume link " type="text" name="resume" id="" class="bg-slate-100 p-2 rounded-sm w-full" required>
+            <p class="my-[30px]"></p>
+            <button type="submit" class=" text-[18px] text-white font-bold bg-orange-400 p-[8px] border-[2px] w-[150px] border-black cursor-pointer">Submit</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>
