@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', async(req, res) => {
    res.render('Home');
-})
+});
 app.post('/apply',(req,res)=>{
 
     // const random=Number(Date.now());
@@ -35,7 +35,7 @@ app.post('/apply',(req,res)=>{
         console.log('DB Error',err);
         return res.status(500).send('Internal Server Error ! 💣')
     });
-})
+});
 app.get('/admin',(req,res,next)=>{
     db.execute('SELECT * FROM STUDENT_INFO')
     .then(([rows,fields])=>{
@@ -45,7 +45,21 @@ app.get('/admin',(req,res,next)=>{
         console.log('DB Error');
         return res.status(500).send('Internal Server Error 💣');
     })
-})
+});
+app.get('/applicant/:id',(req,res)=>{
+    const ID=req.params.id;
+    db.execute(`SELECT * FROM STUDENT_INFO WHERE ID=?`,[ID])
+    .then(([rows,fields])=>{
+        if(rows.length===0){
+            return res.status(404).send('<h1>Applicant not found 😢</h1>');
+        }
+        res.render('Profile',{data:rows[0]});
+    })
+    .catch((err)=>{
+        console.log('DB Error');
+        return res.status(500).send('Internal Server Error 💣')
+    })
+});
 app.listen(3000, () => {
     console.log(`Server is running on http://localhost:3000`);
-})
+});
