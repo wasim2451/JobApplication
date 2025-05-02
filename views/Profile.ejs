@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Applicant Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-100 to-pink-100 min-h-screen flex items-center justify-center font-sans">
+  <div class="w-full max-w-4xl bg-white rounded-3xl shadow-2xl p-8 sm:p-12">
+    <h1 class="text-4xl font-extrabold text-center text-indigo-600 mb-8">Applicant Profile 💼</h1>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800">
+      <div>
+        <h2 class="font-semibold text-pink-600">Name</h2>
+        <p class="text-lg"><%= data.STUDENT_NAME %></p>
+      </div>
+      <div>
+        <h2 class="font-semibold text-pink-600">Email</h2>
+        <p class="text-lg"><%= data.EMAIL %></p>
+      </div>
+      <div>
+        <h2 class="font-semibold text-pink-600">Phone</h2>
+        <p class="text-lg"><%= data.PHONE_NO %></p>
+      </div>
+      <div>
+        <h2 class="font-semibold text-pink-600">Date of Birth</h2>
+        <p class="text-lg"><%= data.DOB %></p>
+      </div>
+      <div>
+        <h2 class="font-semibold text-pink-600">Address</h2>
+        <p class="text-lg"><%= data.ADDRESS %></p>
+      </div>
+      <div>
+        <h2 class="font-semibold text-pink-600">Position</h2>
+        <p class="text-lg"><%= data.POSITION %></p>
+      </div>
+      <div>
+        <h2 class="font-semibold text-pink-600">Experience</h2>
+        <p class="text-lg"><%= data.EXPERIENCE %></p>
+      </div>
+      <div>
+        <h2 class="font-semibold text-pink-600">Resume</h2>
+        <a href="<%= data.RESUME_LINK %>" target="_blank" class="text-blue-500 hover:underline hover:text-blue-700 transition">
+          View Resume 📄
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-10 text-center">
+      <a href="/admin" class="inline-block bg-indigo-500 text-white px-6 py-3 rounded-full hover:bg-indigo-600 transition">
+        ⬅ Back to Dashboard
+      </a>
+    </div>
+  </div>
+</body>
+</html>

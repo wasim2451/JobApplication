@@ -31,7 +31,11 @@
           <% data.forEach(db => { %>
             <tr class="border-b hover:bg-gray-100">
               <td class="px-4 py-3"><%= db.ID %></td>
-              <td class="px-4 py-3"><%= db.STUDENT_NAME %></td>
+              <td class="px-4 py-3">
+                <a href="/applicant/<%= db.ID %>" class="text-blue-600 hover:underline font-semibold">
+                  <%= db.STUDENT_NAME %>
+                </a>
+              </td>
               <td class="px-4 py-3"><%= db.EMAIL %></td>
               <td class="px-4 py-3"><%= db.PHONE_NO %></td>
               <td class="px-4 py-3"><%= db.DOB %></td>
